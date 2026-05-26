@@ -3,201 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Verma - Senior Full Stack Developer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Himanshu Verma — Senior Full Stack Developer</title>
+    <meta name="description" content="Senior Full Stack Developer with 12+ years experience in Node.js, React/Next.js, Laravel, AI/LLM, and distributed systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Header -->
-        <header class="header">
-            <h1>Himanshu Verma</h1>
-            <p class="title">Senior / Lead Full Stack Developer</p>
-            <div class="contact-info">
-                <span>Lucknow, India</span>
-                <span class="separator">|</span>
-                <span>+91 8750784618</span>
-                <span class="separator">|</span>
-                <a href="mailto:himan.verma@live.com">himan.verma@live.com</a>
+    <!-- Background Canvas for Particle Effect -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="code-tag">&lt;</span>HV<span class="code-tag">/&gt;</span>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="about">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Available for Opportunities
             </div>
-        </header>
+            <h1 class="hero-title">
+                <span class="gradient-text">Himanshu Verma</span>
+            </h1>
+            <p class="hero-subtitle">
+                Senior / Lead <span class="typewriter" data-text="Full Stack Developer"></span>
+            </p>
+            <p class="hero-summary">
+                12+ years architecting high-scale web & mobile ecosystems. Expert in <strong>Node.js</strong>, 
+                <strong>React/Next.js</strong>, and <strong>Laravel</strong>. Driving technical strategy, 
+                leading cross-functional teams, and implementing <strong>AI/LLM</strong> solutions in production.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">12+</span>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="mailto:himan.verma@live.com" class="btn btn-primary">
+                    <span>Get In Touch</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/himanverma" target="_blank" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="code-filename">developer.js</span>
+                </div>
+                <div class="code-body">
+                    <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Himanshu Verma'</span>,
+  <span class="code-property">role</span>: <span class="code-string">'Senior Full Stack'</span>,
+  <span class="code-property">experience</span>: <span class="code-number">12</span>,
+  <span class="code-property">stack</span>: [<span class="code-string">'Node.js'</span>, <span class="code-string">'React'</span>, 
+            <span class="code-string">'Next.js'</span>, <span class="code-string">'Laravel'</span>],
+  <span class="code-property">ai</span>: <span class="code-boolean">true</span>,
+  <span class="code-property">docker</span>: <span class="code-boolean">true</span>,
+  <span class="code-property">hireable</span>: <span class="code-boolean">true</span>
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <!-- Professional Summary -->
-        <section class="section">
-            <h2>Professional Summary</h2>
-            <p>Accomplished <strong>Senior Full Stack Developer</strong> with <strong>12+ years</strong> of engineering experience specializing in high-scale web and mobile ecosystems. Expert in architecting distributed systems using <strong>Node.js, React/Next.js, and Laravel</strong>. Proven track record of driving technical strategy, leading cross-functional teams, and implementing <strong>Docker-based</strong> local-to-cloud workflows. Deeply focused on system performance, secure payment integrations, and the practical application of <strong>AI/LLM</strong> technologies in production environments.</p>
-        </section>
-
-        <!-- Technical Skills -->
-        <section class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-header">
+            <span class="section-tag">Technical Arsenal</span>
+            <h2 class="section-title">Skills & Expertise</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
                     <h3>Backend</h3>
-                    <p>Node.js (Express/AdonisJS), PHP (Laravel), RESTful API Design, Prisma ORM, Socket.io</p>
                 </div>
-                <div class="skill-category">
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Node.js</span>
+                    <span class="skill-tag expert">Express</span>
+                    <span class="skill-tag expert">AdonisJS</span>
+                    <span class="skill-tag expert">PHP</span>
+                    <span class="skill-tag advanced">Laravel</span>
+                    <span class="skill-tag advanced">REST APIs</span>
+                    <span class="skill-tag">Prisma ORM</span>
+                    <span class="skill-tag">Socket.io</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
                     <h3>Frontend</h3>
-                    <p>React.js, Next.js (App Router/SSR), TailwindCSS, Zustand, Redux, Vite</p>
                 </div>
-                <div class="skill-category">
+                <div class="skill-tags">
+                    <span class="skill-tag expert">React.js</span>
+                    <span class="skill-tag expert">Next.js</span>
+                    <span class="skill-tag expert">TailwindCSS</span>
+                    <span class="skill-tag advanced">Zustand</span>
+                    <span class="skill-tag advanced">Redux</span>
+                    <span class="skill-tag">Vite</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
                     <h3>Mobile</h3>
-                    <p>React Native, NativeWind, Expo, Cross-platform Deployment</p>
                 </div>
-                <div class="skill-category">
+                <div class="skill-tags">
+                    <span class="skill-tag expert">React Native</span>
+                    <span class="skill-tag advanced">NativeWind</span>
+                    <span class="skill-tag">Expo</span>
+                    <span class="skill-tag">Cross-platform</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
                     <h3>Databases</h3>
-                    <p>MySQL, MongoDB, Redis (Caching/Queues), PostgreSQL</p>
                 </div>
-                <div class="skill-category full-width">
-                    <h3>Infrastructure & Tools</h3>
-                    <p>AWS (EC2, S3, Lambda), Docker, Auth0, Git, CI/CD Pipelines</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Skills -->
-        <section class="section">
-            <h2>AI & Emerging Technology Skills</h2>
-            <div class="ai-skills">
-                <div class="ai-item">
-                    <h3>LLM Orchestration</h3>
-                    <p>Local deployment and management of LLMs using <strong>Ollama</strong>.</p>
-                </div>
-                <div class="ai-item">
-                    <h3>AI Engineering</h3>
-                    <p>Implementation of <strong>Agentic AI</strong> workflows and <strong>FunctionGemma (270M)</strong> experimentation.</p>
-                </div>
-                <div class="ai-item">
-                    <h3>Prompt Engineering</h3>
-                    <p>Designing structured prompts for automated data extraction and application logic.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">MySQL</span>
+                    <span class="skill-tag advanced">MongoDB</span>
+                    <span class="skill-tag advanced">Redis</span>
+                    <span class="skill-tag">PostgreSQL</span>
                 </div>
             </div>
-        </section>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                    </div>
+                    <h3>Infrastructure</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">AWS</span>
+                    <span class="skill-tag expert">Docker</span>
+                    <span class="skill-tag advanced">Auth0</span>
+                    <span class="skill-tag advanced">CI/CD</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+            <div class="skill-group featured">
+                <div class="skill-group-header">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 2a10 10 0 0 1 10 10"/><path d="M12 12L2.5 7.5"/></svg>
+                    </div>
+                    <h3>AI & Emerging Tech</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Ollama</span>
+                    <span class="skill-tag expert">Agentic AI</span>
+                    <span class="skill-tag advanced">FunctionGemma</span>
+                    <span class="skill-tag advanced">Prompt Engineering</span>
+                    <span class="skill-tag">LLM Orchestration</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Professional Experience -->
-        <section class="section">
-            <h2>Professional Experience</h2>
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-header">
+            <span class="section-tag">Career Journey</span>
+            <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-line"></div>
             
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3>Capital Numbers Infotech Pvt Ltd</h3>
-                    <span class="role">Senior Software Developer</span>
-                    <span class="duration">Jan 2025 – Present</span>
-                </div>
-                <ul>
-                    <li>Architecting high-performance frontend architectures using <strong>Next.js (App Router)</strong> and <strong>TailwindCSS</strong>, achieving &lt;2s page load times.</li>
-                    <li>Designing scalable client-side state management systems using <strong>Zustand</strong>, reducing boilerplate by 40% compared to Redux.</li>
-                    <li>Leading the integration of <strong>Auth0</strong> for centralized identity management across multiple client products.</li>
-                    <li><strong>Projects:</strong> <em>ottogusto.com</em>, <em>qverde.com</em> (Focus on modular UI components and seamless API synchronization).</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3>Payix | RePay</h3>
-                    <span class="role">Senior Software Engineer</span>
-                    <span class="duration">2020 – 2024</span>
-                </div>
-                <ul>
-                    <li>Developed core fintech modules for high-frequency payment processing using <strong>Node.js</strong> and <strong>React</strong>, ensuring 99.9% uptime.</li>
-                    <li>Engineered efficient database schemas in <strong>MySQL</strong> and implemented <strong>Redis</strong> caching strategies to handle peak transaction loads.</li>
-                    <li>Collaborated on the containerization of monolithic services into <strong>Docker</strong> microservices, streamlining the development-to-staging lifecycle.</li>
-                    <li>Mentored a team of 5+ developers, establishing best practices for code quality, documentation, and unit testing.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3>Appster LLP</h3>
-                    <span class="role">Senior Software Engineer</span>
-                    <span class="duration">2016 – 2018</span>
-                </div>
-                <ul>
-                    <li>Built and scaled full-stack web applications for global startups using <strong>Laravel</strong> and <strong>Node.js</strong>.</li>
-                    <li>Developed feature-rich mobile apps using <strong>React Native</strong>, focusing on high-performance animations and offline-first capabilities.</li>
-                    <li>Engineered real-time notification and data streaming services utilizing <strong>Socket.io</strong>.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3>Zakoopi (RustOrange)</h3>
-                    <span class="role">Technical Lead & Architect</span>
-                    <span class="duration">2015 – 2016</span>
-                </div>
-                <ul>
-                    <li>Spearheaded the technical vision and system design for a social discovery engine serving thousands of concurrent users.</li>
-                    <li>Directed the migration from a monolith to a <strong>Service-Oriented Architecture (SOA)</strong> to improve horizontal scalability.</li>
-                    <li>Managed cloud resource provisioning and deployment on <strong>AWS</strong>, optimizing cost and performance.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item compact">
-                <div class="experience-header">
-                    <h3>Futureworks Pvt Ltd</h3>
-                    <span class="role">Senior Team Leader</span>
-                    <span class="duration">2014 – 2015</span>
-                </div>
-                <p>Led the engineering lifecycle for enterprise-grade web solutions, ensuring on-time delivery and adherence to architectural standards.</p>
-            </div>
-
-            <div class="experience-item compact">
-                <div class="experience-header">
-                    <h3>Cardinal Technology Solutions</h3>
-                    <span class="role">UI/UX Developer</span>
-                    <span class="duration">2013 – 2014</span>
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Capital Numbers Infotech Pvt Ltd</h3>
+                            <span class="timeline-role">Senior Software Developer</span>
+                        </div>
+                        <span class="timeline-date">Jan 2025 – Present</span>
+                    </div>
+                    <ul class="timeline-achievements">
+                        <li>Architecting high-performance frontend with <strong>Next.js (App Router)</strong> & <strong>TailwindCSS</strong>, achieving <strong>&lt;2s</strong> page load times</li>
+                        <li>Designed scalable state management with <strong>Zustand</strong>, reducing boilerplate by <strong>40%</strong> vs Redux</li>
+                        <li>Leading <strong>Auth0</strong> integration for centralized identity across client products</li>
+                        <li>Projects: <em>ottogusto.com</em>, <em>qverde.com</em></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="experience-item compact">
-                <div class="experience-header">
-                    <h3>Maaraj Strategic Development</h3>
-                    <span class="role">Team Leader / Web Developer</span>
-                    <span class="duration">2012 – 2013</span>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Payix | RePay</h3>
+                            <span class="timeline-role">Senior Software Engineer</span>
+                        </div>
+                        <span class="timeline-date">2020 – 2024</span>
+                    </div>
+                    <ul class="timeline-achievements">
+                        <li>Built core fintech modules for high-frequency payment processing with <strong>Node.js</strong> & <strong>React</strong></li>
+                        <li>Ensured <strong>99.9% uptime</strong> for critical payment infrastructure</li>
+                        <li>Engineered <strong>MySQL</strong> schemas & <strong>Redis</strong> caching for peak transaction loads</li>
+                        <li>Containerized monoliths into <strong>Docker</strong> microservices</li>
+                        <li>Mentored team of <strong>5+ developers</strong> on code quality & testing</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="experience-item compact">
-                <div class="experience-header">
-                    <h3>Macro Info Solutions</h3>
-                    <span class="role">Web Developer</span>
-                    <span class="duration">2011 – 2012</span>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Appster LLP</h3>
+                            <span class="timeline-role">Senior Software Engineer</span>
+                        </div>
+                        <span class="timeline-date">2016 – 2018</span>
+                    </div>
+                    <ul class="timeline-achievements">
+                        <li>Scaled full-stack apps for global startups using <strong>Laravel</strong> & <strong>Node.js</strong></li>
+                        <li>Developed <strong>React Native</strong> mobile apps with offline-first architecture</li>
+                        <li>Built real-time services with <strong>Socket.io</strong></li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Key Projects -->
-        <section class="section">
-            <h2>Key Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Enterprise Fintech Engine</h3>
-                    <p>Built multi-tenant payment gateways with a focus on data integrity and security audit compliance.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Real-time Event Systems</h3>
-                    <p>Architected a live event notification engine using <strong>Node.js</strong> and <strong>Redis Pub/Sub</strong> to handle thousands of concurrent webhooks.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Dynamic E-commerce Architectures</h3>
-                    <p>Leveraged <strong>Next.js SSR</strong> and <strong>Prisma</strong> to build highly indexable, SEO-optimized marketplaces with complex product relationships.</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Zakoopi (RustOrange)</h3>
+                            <span class="timeline-role">Technical Lead & Architect</span>
+                        </div>
+                        <span class="timeline-date">2015 – 2016</span>
+                    </div>
+                    <ul class="timeline-achievements">
+                        <li>Spearheaded social discovery engine serving <strong>thousands</strong> of concurrent users</li>
+                        <li>Migrated monolith to <strong>Service-Oriented Architecture</strong></li>
+                        <li>Optimized <strong>AWS</strong> infrastructure for cost & performance</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Education -->
-        <section class="section">
-            <h2>Education</h2>
-            <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
-        </section>
+            <div class="timeline-item compact">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Earlier Career</h3>
+                        </div>
+                    </div>
+                    <div class="earlier-roles">
+                        <div class="earlier-role">
+                            <span class="role-name">Senior Team Leader</span>
+                            <span class="role-company">Futureworks Pvt Ltd</span>
+                            <span class="role-date">2014 – 2015</span>
+                        </div>
+                        <div class="earlier-role">
+                            <span class="role-name">UI/UX Developer</span>
+                            <span class="role-company">Cardinal Technology Solutions</span>
+                            <span class="role-date">2013 – 2014</span>
+                        </div>
+                        <div class="earlier-role">
+                            <span class="role-name">Team Leader / Web Developer</span>
+                            <span class="role-company">Maaraj Strategic Development</span>
+                            <span class="role-date">2012 – 2013</span>
+                        </div>
+                        <div class="earlier-role">
+                            <span class="role-name">Web Developer</span>
+                            <span class="role-company">Macro Info Solutions</span>
+                            <span class="role-date">2011 – 2012</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>References available upon request</p>
-        </footer>
-    </div>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-header">
+            <span class="section-tag">Featured Work</span>
+            <h2 class="section-title">Key Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card featured-project">
+                <div class="project-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M7 15h.01"/><path d="M12 15h.01"/></svg>
+                </div>
+                <h3>Enterprise Fintech Engine</h3>
+                <p>Built multi-tenant payment gateways with data integrity focus and security audit compliance.</p>
+                <div class="project-tech">
+                    <span>Node.js</span><span>React</span><span>MySQL</span><span>Redis</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <h3>Real-time Event Systems</h3>
+                <p>Architected live event notification engine handling thousands of concurrent webhooks.</p>
+                <div class="project-tech">
+                    <span>Node.js</span><span>Redis Pub/Sub</span><span>Socket.io</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                </div>
+                <h3>Dynamic E-commerce</h3>
+                <p>SEO-optimized marketplaces with complex product relationships using Next.js SSR & Prisma.</p>
+                <div class="project-tech">
+                    <span>Next.js</span><span>Prisma</span><span>TailwindCSS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="section-header">
+            <span class="section-tag">Education</span>
+            <h2 class="section-title">Academic Background</h2>
+        </div>
+        <div class="education-card">
+            <div class="education-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="education-content">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <p>Foundation in computer science, software engineering principles, and application development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="contact-title">Let's Build Something <span class="gradient-text">Amazing</span></h2>
+            <p class="contact-subtitle">Open to senior/lead roles, consulting, and architecture opportunities.</p>
+            <div class="contact-grid">
+                <a href="mailto:himan.verma@live.com" class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">himan.verma@live.com</span>
+                </a>
+                <a href="tel:+918750784618" class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">+91 8750784618</span>
+                </a>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Lucknow, India</span>
+                </div>
+                <a href="https://github.com/himanverma" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">@himanverma</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Built with HTML, CSS & JavaScript by Himanshu Verma</p>
+            <p class="footer-year">2025</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
