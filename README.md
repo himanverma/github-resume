@@ -24,7 +24,13 @@ Visit: `https://himanverma.github.io/github-resume`
 - Key Projects
 - Education
 
-## 🛠️ Tech Stack
+## � Featured Projects
+
+- **BoloBill Voice Commerce** – AI voice-first ordering for Indian kiranas with WhatsApp ordering, UPI billing, and inventory automation.
+- **Safe Ride Track** – Real-time fleet telemetry dashboards with live GPS, geofencing alerts, and driver scorecards.
+- **AptitudeClasses 360°** – Competitive exam prep stack hosting 30 years of solved papers, tens of thousands of MCQs, and live quiz infrastructure.
+
+## �🛠️ Tech Stack
 
 - HTML5 (Semantic)
 - CSS3 (Flexbox, Grid, Custom Properties)
