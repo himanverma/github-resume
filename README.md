@@ -14,6 +14,7 @@ Visit: `https://himanverma.github.io/github-resume`
 - **Fast Loading** - Minimal dependencies, vanilla CSS/JS
 - **SEO Optimized** - Semantic HTML structure
 - **Accessible** - WCAG compliant color contrast and semantic markup
+- **Dual Theme** - Light and dark palettes with system preference + manual toggle persistence
 
 ## 📄 Sections Included
 

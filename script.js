@@ -1,6 +1,43 @@
 // Modern Resume - Interactive Features
 
 document.addEventListener('DOMContentLoaded', function() {
+    const THEME_KEY = 'hv-theme';
+    const root = document.documentElement;
+    const themeToggle = document.querySelector('.theme-toggle');
+    
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            themeToggle?.classList.add('active');
+        } else {
+            root.removeAttribute('data-theme');
+            themeToggle?.classList.remove('active');
+        }
+    }
+    
+    function detectPreferredTheme() {
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored) return stored;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        return media.matches ? 'dark' : 'light';
+    }
+    
+    let currentTheme = detectPreferredTheme();
+    applyTheme(currentTheme);
+    
+    themeToggle?.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem(THEME_KEY, currentTheme);
+        applyTheme(currentTheme);
+    });
+    
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+        if (!localStorage.getItem(THEME_KEY)) {
+            currentTheme = event.matches ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        }
+    });
+
     // Typewriter Effect
     const typewriter = document.querySelector('.typewriter');
     if (typewriter) {
