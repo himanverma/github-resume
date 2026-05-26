@@ -4,7 +4,7 @@ A modern, responsive, and professional GitHub Pages resume site.
 
 ## 🌐 Live Demo
 
-Visit: `https://yourusername.github.io/github-resume`
+Visit: `https://himanverma.github.io/github-resume`
 
 ## 🚀 Features
 
