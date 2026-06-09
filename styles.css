@@ -1,7 +1,26 @@
 /* ============================================
-   MODERN RESUME - SENIOR DEVELOFPRT THEME
+   MODERN RESUME - SENIOR DEVELOPER THEME
    Dark, sophisticated, code-inspired design
    ============================================ */
+
+/* ATS-friendly hidden plain-text resume */
+.ats-resume {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media print {
+    .ats-resume {
+        display: none !important;
+    }
+}
 
 :root {
     /* Core Colors (Light) */

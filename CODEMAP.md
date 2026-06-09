@@ -109,6 +109,37 @@ User clicks Download PDF  →  window.print()         →  @media print rules
 
 ---
 
+## ATS & SEO Optimization
+
+### Hidden Plain-Text Resume (`.ats-resume`)
+- Visually hidden (`position: absolute; clip: rect(0,0,0,0)`) but present in DOM
+- Contains complete resume in plain HTML: name, contact, summary, skills grouped by category, full work history with bullets, education, and projects
+- Removed in print view
+
+### Schema.org JSON-LD (`<script type="application/ld+json">`)
+- `@type: Person` with name, jobTitle, description, url, sameAs (GitHub, LinkedIn)
+- Contact: email, telephone, address (PostalAddress)
+- `knowsAbout`: 20+ skill keywords
+- `worksFor`: 4 organizations with name, jobTitle, startDate, endDate
+- `alumniOf`: EducationalOrganization (BCA)
+
+### Microdata (`itemscope` / `itemprop`)
+- `<header class="hero">` — `itemscope itemtype="Person"`, `itemprop="name"`, `itemprop="jobTitle"`
+- Each `.timeline-item` — `itemprop="worksFor"` + `itemscope Organization`
+- `.education-card` — `itemprop="alumniOf"` + `itemscope EducationalOrganization`
+- Contact items — `itemprop="email"`, `itemprop="telephone"`, `itemprop="address"`
+
+### Meta Tags
+- `description`, `author`, `keywords` (15+ terms), `robots: index,follow`
+- Open Graph: `og:title`, `og:description`, `og:type: profile`, `profile:first_name/last_name`
+- Canonical URL
+
+### ARIA Landmarks
+- `<nav role="navigation" aria-label="Main navigation">`
+- `<header role="banner">`
+- `<main role="main">`
+- `<footer role="contentinfo">`
+
 ## External Dependencies
 - Google Fonts: Inter, JetBrains Mono
 - No npm packages, no bundler

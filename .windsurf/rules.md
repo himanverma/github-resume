@@ -56,6 +56,15 @@
 - All cards must use `page-break-inside: avoid`
 - Print styles must not rely on background graphics being enabled in browser
 
+### ATS / SEO Rules
+- Every resume update must be reflected in ALL three places: visible HTML, `.ats-resume` hidden block, and JSON-LD `SYSTEM_PROMPT`
+- `.ats-resume` must use standard heading hierarchy (`h1` > `h2` > `p`/`ul`) and never rely on CSS for content
+- Schema.org JSON-LD must include: `Person`, `worksFor[]`, `alumniOf`, `knowsAbout[]`, `sameAs[]`, contact fields
+- Add `itemprop` microdata to experience, education, and contact elements
+- Meta keywords must include all major skills and job titles
+- ARIA landmarks (`role="banner"`, `role="main"`, `role="navigation"`, `role="contentinfo"`) must be present
+- Canonical URL and `robots: index,follow` meta tag required
+
 ## Deployment Checklist
 
 - [ ] All three source files (`index.html`, `styles.css`, `script.js`) committed

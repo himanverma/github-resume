@@ -12,8 +12,9 @@ Visit: `https://himanverma.github.io/github-resume`
 - **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - **Print-Friendly** - Dedicated print styles for PDF export
 - **Fast Loading** - Minimal dependencies, vanilla CSS/JS
-- **SEO Optimized** - Semantic HTML structure
-- **Accessible** - WCAG compliant color contrast and semantic markup
+- **SEO Optimized** - Semantic HTML structure with Schema.org JSON-LD
+- **Accessible** - WCAG compliant color contrast, semantic markup, and ARIA landmarks
+- **ATS Ready** - Hidden plain-text resume layer, comprehensive meta tags, and structured data for parser compatibility
 - **Dual Theme** - Light and dark palettes with system preference + manual toggle persistence
 - **AI Chat Assistant** - Interactive LLM-powered chat widget with support for OpenAI, Ollama (local), and built-in knowledge fallback
 - **Print-Optimized PDF Export** - One-click download button with professional A4 layout, clean typography, and proper page breaks
@@ -108,6 +109,16 @@ Edit `index.html` and replace:
 - Professional summary
 - Skills and experience
 - Project details
+
+## 🤖 ATS Compatibility
+
+The resume is optimized for Applicant Tracking Systems (ATS):
+
+- **Schema.org JSON-LD** — Full `Person` structured data with `worksFor`, `alumniOf`, `knowsAbout`, contact info, and skills
+- **Hidden Plain-Text Layer** — A visually hidden `.ats-resume` block contains the full resume in plain HTML text for parsers that scrape DOM content
+- **Semantic HTML + ARIA** — Proper `<main>`, `<nav>`, `<header>`, `<footer>` landmarks and `role` attributes
+- **Microdata** — `itemprop` annotations on experience, education, and contact elements
+- **Meta Tags** — Author, keywords, robots, Open Graph, and canonical URL for search indexing
 
 ## 🤖 AI Chat Assistant
 
