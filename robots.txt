@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://himanverma.github.io/github-resume/sitemap.xml
