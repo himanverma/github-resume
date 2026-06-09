@@ -15,6 +15,8 @@ Visit: `https://himanverma.github.io/github-resume`
 - **SEO Optimized** - Semantic HTML structure
 - **Accessible** - WCAG compliant color contrast and semantic markup
 - **Dual Theme** - Light and dark palettes with system preference + manual toggle persistence
+- **AI Chat Assistant** - Interactive LLM-powered chat widget with support for OpenAI, Ollama (local), and built-in knowledge fallback
+- **Print-Optimized PDF Export** - One-click download button with professional A4 layout, clean typography, and proper page breaks
 
 ## 📄 Sections Included
 
@@ -25,18 +27,18 @@ Visit: `https://himanverma.github.io/github-resume`
 - Key Projects
 - Education
 
-## � Featured Projects
+## ⭐ Featured Projects
 
 - **BoloBill Voice Commerce** – AI voice-first ordering for Indian kiranas with WhatsApp ordering, UPI billing, and inventory automation.
 - **Safe Ride Track** – Real-time fleet telemetry dashboards with live GPS, geofencing alerts, and driver scorecards.
 - **AptitudeClasses 360°** – Competitive exam prep stack hosting 30 years of solved papers, tens of thousands of MCQs, and live quiz infrastructure.
 
-## �🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - HTML5 (Semantic)
 - CSS3 (Flexbox, Grid, Custom Properties)
 - Vanilla JavaScript (ES6+)
-- Google Fonts (Inter)
+- Google Fonts (Inter, JetBrains Mono)
 
 ## 📱 Responsive Breakpoints
 
@@ -72,12 +74,21 @@ https://yourusername.github.io/github-resume
 
 ## 📄 Export as PDF
 
-To save as PDF for email/print:
-1. Open the live site in Chrome/Edge
-2. Press `Ctrl + P` (Windows) or `Cmd + P` (Mac)
-3. Select **Save as PDF**
-4. Choose **More settings** → Check **Background graphics**
-5. Click **Save**
+### One-Click Download
+Click the **Download PDF** button in the hero section. The resume is automatically formatted for **A4** with:
+- Clean black-and-white typography
+- Compact skill grids and project cards
+- Professional page breaks between major sections
+- Contact info integrated into the header
+- All interactive elements (navbar, chat, animations) hidden
+
+### Manual Export
+Alternatively, press `Ctrl + P` (Windows) or `Cmd + P` (Mac) and select **Save as PDF**.
+
+**Recommended print settings:**
+- Paper size: **A4**
+- Margins: **Default**
+- Background graphics: **Enabled** (for subtle skill tag backgrounds)
 
 ## 🎨 Customization
 
@@ -97,6 +108,23 @@ Edit `index.html` and replace:
 - Professional summary
 - Skills and experience
 - Project details
+
+## 🤖 AI Chat Assistant
+
+The resume includes an embedded chat widget that lets visitors ask questions about Himanshu's experience, skills, and projects.
+
+### Providers
+
+- **Local Knowledge** (default) — No API key required. Uses built-in resume data to answer common questions instantly.
+- **OpenAI** — Connect your own OpenAI API key for GPT-4o-mini powered responses. The key is stored locally in your browser.
+- **Ollama** — Connect to a local Ollama instance (e.g., `http://localhost:11434`) for fully private, offline LLM inference.
+
+### Setup
+
+1. Click the chat icon in the bottom-right corner.
+2. Use the settings (gear) icon to choose your preferred provider.
+3. Enter API credentials if required and click **Save Settings**.
+4. Start asking questions!
 
 ## 📧 Contact
 

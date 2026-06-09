@@ -1244,35 +1244,741 @@ section {
     }
 }
 
-/* Print */
+/* Chat Widget */
+.chat-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    z-index: 1001;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-toggle:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+}
+
+.chat-toggle.hidden {
+    display: none;
+}
+
+.chat-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    height: 520px;
+    max-height: calc(100vh - 100px);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1002;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+.chat-widget.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.chat-title svg {
+    color: var(--accent-primary);
+}
+
+.chat-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.chat-settings-btn,
+.chat-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.chat-settings-btn:hover,
+.chat-close-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.chat-settings {
+    display: none;
+    padding: 16px;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.chat-settings.open {
+    display: flex;
+}
+
+.chat-setting-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chat-setting-row label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chat-setting-row select,
+.chat-setting-row input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: var(--font-primary);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.chat-setting-row select:focus,
+.chat-setting-row input:focus {
+    border-color: var(--accent-primary);
+}
+
+.chat-setting-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.chat-save-settings {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent-gradient);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.chat-save-settings:hover {
+    opacity: 0.9;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scroll-behavior: smooth;
+}
+
+.chat-message {
+    display: flex;
+    gap: 10px;
+    max-width: 100%;
+}
+
+.chat-message.user {
+    flex-direction: row-reverse;
+}
+
+.chat-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.chat-message.bot .chat-avatar {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.chat-message.user .chat-avatar {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.chat-bubble {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: calc(100% - 40px);
+    word-wrap: break-word;
+}
+
+.chat-message.bot .chat-bubble {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-top-left-radius: 2px;
+}
+
+.chat-message.user .chat-bubble {
+    background: var(--accent-gradient);
+    color: white;
+    border-top-right-radius: 2px;
+}
+
+.chat-bubble p {
+    margin: 0 0 8px;
+}
+
+.chat-bubble p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-bubble ul {
+    margin: 8px 0;
+    padding-left: 18px;
+}
+
+.chat-bubble li {
+    margin-bottom: 4px;
+}
+
+.chat-bubble strong {
+    font-weight: 600;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 8px;
+    padding: 12px 14px;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    flex-shrink: 0;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: var(--font-primary);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.chat-input:focus {
+    border-color: var(--accent-primary);
+}
+
+.chat-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.chat-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent-gradient);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease;
+}
+
+.chat-send:hover {
+    opacity: 0.9;
+}
+
+.chat-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chat-typing {
+    display: flex;
+    gap: 4px;
+    padding: 10px 14px;
+}
+
+.chat-typing span {
+    width: 6px;
+    height: 6px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.chat-typing span:nth-child(1) { animation-delay: -0.32s; }
+.chat-typing span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .chat-widget {
+        right: 8px;
+        bottom: 8px;
+        width: calc(100vw - 16px);
+        height: calc(100vh - 16px);
+        max-height: none;
+        border-radius: 12px;
+    }
+    .chat-toggle {
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+/* Print - A4 Optimized Resume */
 @media print {
+    @page {
+        size: A4;
+        margin: 16mm 18mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+        font-size: 10pt;
+    }
+
     body {
-        background: white;
-        color: black;
+        background: #fff !important;
+        color: #111 !important;
+        font-size: 10pt;
+        line-height: 1.45;
+        overflow-x: visible;
     }
-    
-    .navbar, #bgCanvas, .hero-visual {
-        display: none;
+
+    /* Hide interactive & decorative elements */
+    .navbar, #bgCanvas, .hero-visual, .chat-widget, .chat-toggle,
+    .theme-toggle, .menu-toggle, .hero-badge, .hero-stats,
+    .pulse-dot, .typewriter, .code-window, .section-tag,
+    .timeline-line, .timeline-dot, .project-icon,
+    .education-icon, .contact-icon, .contact-item .contact-icon,
+    .skill-icon, .footer, .project-link, .btn svg,
+    .hero-cta .btn-primary, .hero-cta .btn-secondary:first-of-type,
+    #downloadPdfBtn {
+        display: none !important;
     }
-    
-    .hero {
-        min-height: auto;
-        padding: 40px;
-    }
-    
-    .hero-title, .section-title {
-        color: black;
-    }
-    
-    .gradient-text {
-        -webkit-text-fill-color: black;
-    }
-    
+
+    /* Reset sections for print */
     section {
+        padding: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        position: static !important;
+        z-index: auto !important;
         page-break-inside: avoid;
     }
-    
+
+    /* Hero as clean header */
+    .hero {
+        min-height: auto !important;
+        padding: 0 0 10pt 0 !important;
+        margin: 0 0 8pt 0 !important;
+        gap: 0 !important;
+        display: block !important;
+        text-align: left !important;
+        border-bottom: 1.5pt solid #111;
+        page-break-after: avoid;
+    }
+
+    .hero-content {
+        max-width: 100% !important;
+    }
+
+    .hero-title {
+        font-size: 22pt !important;
+        font-weight: 700 !important;
+        color: #111 !important;
+        margin-bottom: 4pt !important;
+        line-height: 1.2 !important;
+        letter-spacing: normal !important;
+    }
+
+    .gradient-text {
+        -webkit-text-fill-color: #111 !important;
+        color: #111 !important;
+        background: none !important;
+    }
+
+    .hero-subtitle {
+        font-size: 11pt !important;
+        color: #333 !important;
+        margin-bottom: 6pt !important;
+        font-weight: 500 !important;
+    }
+
+    .hero-summary {
+        font-size: 9.5pt !important;
+        color: #222 !important;
+        line-height: 1.45 !important;
+        margin-bottom: 6pt !important;
+    }
+
+    .hero-summary strong {
+        color: #111 !important;
+        font-weight: 600 !important;
+    }
+
+    /* Print contact strip under hero */
+    .hero::after {
+        content: 'himan.verma@live.com   |   +91 8750784618   |   github.com/himanverma   |   Lucknow, India';
+        display: block;
+        font-size: 8.5pt;
+        color: #333;
+        margin-top: 6pt;
+        font-family: var(--font-mono);
+        letter-spacing: 0.02em;
+    }
+
+    .hero-cta {
+        display: none !important;
+    }
+
+    /* Section titles */
+    .section-header {
+        text-align: left !important;
+        margin-bottom: 6pt !important;
+        margin-top: 10pt !important;
+        border-bottom: 0.75pt solid #ccc;
+        padding-bottom: 3pt;
+        page-break-after: avoid;
+    }
+
+    .section-title {
+        font-size: 12pt !important;
+        font-weight: 700 !important;
+        color: #111 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* Skills - compact horizontal */
+    .skills-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6pt !important;
+    }
+
+    .skill-group {
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+
+    .skill-group-header {
+        margin-bottom: 3pt !important;
+        gap: 4pt !important;
+    }
+
+    .skill-group h3 {
+        font-size: 9.5pt !important;
+        font-weight: 600 !important;
+        color: #111 !important;
+    }
+
+    .skill-tags {
+        gap: 3pt !important;
+    }
+
+    .skill-tag {
+        font-size: 7.5pt !important;
+        padding: 1.5pt 4pt !important;
+        border-radius: 2pt !important;
+        background: #f3f4f6 !important;
+        color: #111 !important;
+        border: 0.5pt solid #ddd !important;
+        font-weight: 400 !important;
+    }
+
+    .skill-tag.expert {
+        background: #e5e7eb !important;
+        border-color: #9ca3af !important;
+        color: #111 !important;
+    }
+
+    .skill-tag.advanced {
+        background: #f3f4f6 !important;
+        border-color: #d1d5db !important;
+        color: #111 !important;
+    }
+
+    /* Experience - compact timeline */
+    .timeline {
+        padding-left: 0 !important;
+    }
+
+    .timeline-item {
+        margin-bottom: 8pt !important;
+        page-break-inside: avoid;
+    }
+
     .timeline-card {
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+
+    .timeline-header {
+        margin-bottom: 3pt !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .timeline-company h3 {
+        font-size: 10.5pt !important;
+        font-weight: 600 !important;
+        color: #111 !important;
+    }
+
+    .timeline-role {
+        font-size: 9pt !important;
+        color: #333 !important;
+        font-weight: 500 !important;
+    }
+
+    .timeline-date {
+        font-size: 8pt !important;
+        color: #555 !important;
+        background: none !important;
+        padding: 0 !important;
+        font-family: var(--font-mono);
+        white-space: nowrap;
+    }
+
+    .timeline-achievements li {
+        font-size: 8.5pt !important;
+        color: #222 !important;
+        margin-bottom: 1.5pt !important;
+        padding-left: 10pt !important;
+        line-height: 1.4 !important;
+    }
+
+    .timeline-achievements li::before {
+        color: #333 !important;
+        content: '>' !important;
+    }
+
+    .timeline-achievements li strong {
+        color: #111 !important;
+        font-weight: 600 !important;
+    }
+
+    /* Earlier roles */
+    .earlier-roles {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 4pt !important;
+    }
+
+    .earlier-role {
+        background: #f9fafb !important;
+        border: 0.5pt solid #e5e7eb !important;
+        border-radius: 2pt !important;
+        padding: 4pt 6pt !important;
+    }
+
+    .role-name {
+        font-size: 8.5pt !important;
+        font-weight: 600 !important;
+        color: #111 !important;
+    }
+
+    .role-company, .role-date {
+        font-size: 7.5pt !important;
+        color: #444 !important;
+    }
+
+    /* Projects - compact grid */
+    .projects-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8pt !important;
+    }
+
+    .project-card {
+        background: none !important;
+        border: 0.5pt solid #e5e7eb !important;
+        border-radius: 3pt !important;
+        padding: 6pt !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+
+    .project-card h3 {
+        font-size: 9.5pt !important;
+        font-weight: 600 !important;
+        color: #111 !important;
+        margin-bottom: 2pt !important;
+    }
+
+    .project-card p {
+        font-size: 8pt !important;
+        color: #333 !important;
+        line-height: 1.35 !important;
+        margin-bottom: 3pt !important;
+    }
+
+    .project-tech {
+        gap: 2pt !important;
+    }
+
+    .project-tech span {
+        font-size: 6.5pt !important;
+        padding: 1pt 3pt !important;
+        border-radius: 1.5pt !important;
+        background: #f3f4f6 !important;
+        color: #333 !important;
+        border: 0.5pt solid #ddd !important;
+        font-family: var(--font-mono);
+    }
+
+    /* Education */
+    .education-card {
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .education-content h3 {
+        font-size: 10pt !important;
+        font-weight: 600 !important;
+        color: #111 !important;
+    }
+
+    .education-content p {
+        font-size: 8.5pt !important;
+        color: #333 !important;
+    }
+
+    /* Contact section hidden in print - info shown in hero header */
+    .contact {
+        display: none !important;
+    }
+
+    /* Fade-in animations disabled */
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Footer hidden */
+    .footer {
+        display: none !important;
+    }
+
+    /* Page break controls */
+    .skills {
+        page-break-before: auto;
+    }
+
+    .experience {
+        page-break-before: auto;
+    }
+
+    .projects {
+        page-break-before: auto;
+    }
+
+    .education {
+        page-break-before: auto;
+    }
+
+    .timeline-item {
+        page-break-inside: avoid;
+    }
+
+    .skill-group {
+        page-break-inside: avoid;
+    }
+
+    .project-card {
+        page-break-inside: avoid;
+    }
+
+    .earlier-role {
         page-break-inside: avoid;
     }
 }
