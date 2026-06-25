@@ -1665,7 +1665,7 @@ section {
     .hero {
         min-height: auto !important;
         padding: 0 0 10pt 0 !important;
-        margin: 0 0 8pt 0 !important;
+        margin: 150pt 0 8pt 0 !important;
         gap: 0 !important;
         display: block !important;
         text-align: left !important;
