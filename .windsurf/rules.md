@@ -22,6 +22,7 @@
 - All `@media print` styles must be in a single block at the end of `styles.css`
 - Component naming: BEM-like prefixes (`.chat-`, `.timeline-`, `.skill-`)
 - `!important` is allowed ONLY inside `@media print` to override existing styles
+- **Never hardcode theme colors in JavaScript; use CSS classes and variables so light/dark mode stays consistent**
 
 ### JavaScript Rules
 - All code inside a single `DOMContentLoaded` listener

@@ -27,6 +27,9 @@ Visit: `https://himanverma.github.io/github-resume`
 - Professional Experience (12+ years)
 - Key Projects
 - Education
+- Contact
+- FAQ (AEO-optimized for rich snippets)
+- Online Resume / QR Code
 
 ## ⭐ Featured Projects
 
@@ -81,7 +84,8 @@ Click the **Download PDF** button in the hero section. The resume is automatical
 - Compact skill grids and project cards
 - Professional page breaks between major sections
 - Contact info integrated into the header
-- All interactive elements (navbar, chat, animations) hidden
+- QR code + "View online" link at the top-right of the first page
+- All interactive elements (navbar, chat, FAQ, animations) hidden
 
 ### Manual Export
 Alternatively, press `Ctrl + P` (Windows) or `Cmd + P` (Mac) and select **Save as PDF**.
@@ -114,11 +118,12 @@ Edit `index.html` and replace:
 
 The resume is optimized for Applicant Tracking Systems (ATS):
 
-- **Schema.org JSON-LD** — Full `Person` structured data with `worksFor`, `alumniOf`, `knowsAbout`, contact info, and skills
+- **Schema.org JSON-LD** — `@graph` with `ProfilePage`, `Person`, and `FAQPage`; includes `worksFor`, `alumniOf`, `knowsAbout`, contact info, and skills
 - **Hidden Plain-Text Layer** — A visually hidden `.ats-resume` block contains the full resume in plain HTML text for parsers that scrape DOM content
 - **Semantic HTML + ARIA** — Proper `<main>`, `<nav>`, `<header>`, `<footer>` landmarks and `role` attributes
 - **Microdata** — `itemprop` annotations on experience, education, and contact elements
-- **Meta Tags** — Author, keywords, robots, Open Graph, and canonical URL for search indexing
+- **Meta Tags** — Author, keywords, robots, Open Graph, Twitter Cards, canonical URL, theme-color, favicon, and apple-touch-icon
+- **Crawl Files** — `robots.txt` and `sitemap.xml` for search engine indexing
 
 ## 🤖 AI Chat Assistant
 

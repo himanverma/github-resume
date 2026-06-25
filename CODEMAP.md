@@ -29,8 +29,10 @@ github-resume/
 5. `<section class="projects" id="projects">` — 6 project cards (3-col grid)
 6. `<section class="education" id="education">` — Single education card
 7. `<section class="contact" id="contact">` — 4 contact items (email, phone, location, GitHub)
-8. `<footer class="footer">` — Built-by credit + dynamic year
-9. **AI Chat Widget** — Fixed-position floating chat (toggle button + chat panel)
+8. `<section class="online-resume" id="online-resume">` — QR code + "View online" link
+9. `<footer class="footer">` — Built-by credit + dynamic year
+10. **AI Chat Widget** — Fixed-position floating chat (toggle button + chat panel)
+11. `<section class="faq" id="faq">` — AEO-optimized FAQ section (visible + `FAQPage` JSON-LD)
 
 ### CSS Architecture (styles.css)
 - `:root` — CSS custom properties for light + dark themes
@@ -51,7 +53,7 @@ github-resume/
 | IntersectionObserver | Adds `.visible` to `.fade-in` elements on scroll |
 | Smooth scroll | Nav links scroll to `#section` |
 | Mobile menu | `.menu-toggle` toggles `.nav-links.active` |
-| Navbar scroll | Adjusts navbar background opacity on scroll |
+| Navbar scroll | Toggles `.scrolled` class so CSS variables handle background color |
 | Dynamic year | Sets `.footer-year` to `new Date().getFullYear()` |
 | **AI Chat** | See Chat Widget section below |
 | **PDF Download** | `window.print()` trigger on `#downloadPdfBtn` click |
@@ -85,12 +87,13 @@ Embedded `SYSTEM_PROMPT` constant contains full resume context (skills, experien
 ## Print / PDF Export (styles.css)
 
 - `@page { size: A4; margin: 16mm 18mm; }`
-- Hidden: navbar, canvas, hero-visual, chat, animations, buttons, footer, contact section
+- Hidden: navbar, canvas, hero-visual, chat, animations, buttons, footer, contact section, FAQ
 - Hero rendered as clean header with contact strip via `::after` pseudo-element
 - Skills: 3-col compact grid with bordered tags
 - Experience: timeline stripped of dots/lines, compact text
 - Projects: 2-col grid with bordered cards
 - Education: minimal row layout
+- `.online-resume` rendered as compact QR code + URL at top-right of first page
 - Page-break-inside: avoid on cards, timeline items, skill groups
 
 ---
@@ -117,11 +120,13 @@ User clicks Download PDF  →  window.print()         →  @media print rules
 - Removed in print view
 
 ### Schema.org JSON-LD (`<script type="application/ld+json">`)
-- `@type: Person` with name, jobTitle, description, url, sameAs (GitHub, LinkedIn)
-- Contact: email, telephone, address (PostalAddress)
+- `@graph` with `ProfilePage`, `Person`, and `FAQPage`
+- `Person`: name, jobTitle, description, url, sameAs (GitHub, LinkedIn), email, telephone, address
 - `knowsAbout`: 20+ skill keywords
 - `worksFor`: 4 organizations with name, jobTitle, startDate, endDate
 - `alumniOf`: EducationalOrganization (BCA)
+- `FAQPage`: 4 Q&A pairs for AEO rich snippets
+- `robots.txt`, `sitemap.xml`, and favicon/apple-touch-icon for SEO crawlability
 
 ### Microdata (`itemscope` / `itemprop`)
 - `<header class="hero">` — `itemscope itemtype="Person"`, `itemprop="name"`, `itemprop="jobTitle"`
