@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himanshu Verma — Resume</title>
+<meta name="description" content="Printable A4 resume of Himanshu Verma, Senior / Lead Full Stack Developer.">
+<style>
+    /* ============================================================
+       PRINTABLE A4 RESUME  —  self-contained, print-first design
+       ============================================================ */
+    :root {
+        --ink:        #14181f;   /* primary text            */
+        --ink-soft:   #3b424d;   /* secondary text          */
+        --ink-faint:  #6b7280;   /* dates / meta            */
+        --accent:     #2251d6;   /* links + thin accents    */
+        --rule:       #d7dbe0;   /* hairlines               */
+        --sheet-bg:   #ffffff;
+        --page-bg:    #eceef1;
+
+        --fs-base:    10.5pt;
+        --lh-base:    1.42;
+
+        --gap-section: 15pt;     /* space above each section title */
+        --gap-entry:   9pt;      /* space between roles            */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        background: var(--page-bg);
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        line-height: var(--lh-base);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* --- The A4 sheet ------------------------------------------------ */
+    .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 24px auto;
+        padding: 16mm 17mm;
+        background: var(--sheet-bg);
+        box-shadow: 0 6px 28px rgba(20, 24, 31, 0.14);
+        font-size: var(--fs-base);
+    }
+
+    /* --- Header ------------------------------------------------------ */
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16pt;
+        padding-bottom: 10pt;
+        border-bottom: 1.6pt solid var(--ink);
+    }
+    .head-main { min-width: 0; }
+    .name {
+        font-size: 25pt;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        line-height: 1.04;
+        color: var(--ink);
+    }
+    .title {
+        margin-top: 3pt;
+        font-size: 11.5pt;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.01em;
+    }
+    .contact {
+        margin-top: 8pt;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3pt 14pt;
+        font-size: 9pt;
+        color: var(--ink-soft);
+    }
+    .contact span { display: inline-flex; align-items: center; gap: 5pt; white-space: nowrap; }
+    .contact a { color: var(--ink-soft); text-decoration: none; }
+    .contact .dot {
+        width: 4.5pt; height: 4.5pt; border-radius: 50%;
+        background: var(--accent); flex: none;
+    }
+
+    /* QR block (right side of header) */
+    .head-qr { flex: none; text-align: center; width: 74pt; }
+    .head-qr img {
+        width: 66pt; height: 66pt; display: block; margin: 0 auto;
+        border: 0.75pt solid var(--rule); border-radius: 4pt; padding: 2pt;
+        background: #fff;
+    }
+    .head-qr small {
+        display: block; margin-top: 3pt;
+        font-size: 6.2pt; letter-spacing: 0.04em; text-transform: uppercase;
+        color: var(--ink-faint);
+    }
+
+    /* --- Sections ---------------------------------------------------- */
+    .section { margin-top: var(--gap-section); }
+    .section-title {
+        font-size: 10pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+        color: var(--ink);
+        padding-bottom: 3pt;
+        margin-bottom: 8pt;
+        border-bottom: 0.75pt solid var(--rule);
+    }
+
+    .summary { font-size: 10pt; color: var(--ink-soft); line-height: 1.5; }
+
+    strong, b { color: var(--ink); font-weight: 650; }
+    .summary strong { color: var(--ink); }
+
+    /* --- Skills grid ------------------------------------------------- */
+    .skills { display: grid; grid-template-columns: max-content 1fr; row-gap: 5pt; column-gap: 12pt; }
+    .skills dt {
+        font-weight: 700; font-size: 8.6pt; color: var(--ink);
+        text-transform: uppercase; letter-spacing: 0.03em; padding-top: 0.5pt;
+    }
+    .skills dd { font-size: 9.6pt; color: var(--ink-soft); }
+    .skills dd strong { font-weight: 600; }
+
+    /* --- Experience -------------------------------------------------- */
+    .entry { margin-top: var(--gap-entry); break-inside: avoid; page-break-inside: avoid; }
+    .entry:first-of-type { margin-top: 0; }
+    .entry-head {
+        display: flex; justify-content: space-between; align-items: baseline;
+        gap: 10pt; margin-bottom: 1pt;
+    }
+    .entry-co { font-size: 10.6pt; font-weight: 700; color: var(--ink); }
+    .entry-role { font-size: 9.6pt; font-weight: 500; color: var(--ink-soft); }
+    .entry-date {
+        flex: none; font-size: 8.6pt; color: var(--ink-faint);
+        font-family: "SF Mono", "Consolas", "Roboto Mono", monospace;
+        white-space: nowrap; letter-spacing: -0.01em;
+    }
+    .bullets { list-style: none; margin-top: 4pt; }
+    .bullets li {
+        position: relative; padding-left: 12pt; margin-bottom: 2.5pt;
+        font-size: 9.5pt; color: var(--ink-soft); line-height: 1.4;
+    }
+    .bullets li::before {
+        content: ""; position: absolute; left: 2pt; top: 4.6pt;
+        width: 3pt; height: 3pt; border-radius: 50%; background: var(--accent);
+    }
+    .bullets li strong { color: var(--ink); font-weight: 600; }
+    .proj-note { color: var(--ink-faint); }
+
+    /* --- Earlier roles (compact) ------------------------------------ */
+    .earlier { margin-top: 9pt; display: grid; grid-template-columns: 1fr 1fr; gap: 4pt 18pt; }
+    .earlier-item {
+        display: flex; justify-content: space-between; gap: 8pt;
+        font-size: 9pt; color: var(--ink-soft);
+        border-top: 0.5pt solid var(--rule); padding-top: 3pt;
+    }
+    .earlier-item b { color: var(--ink); font-weight: 600; }
+    .earlier-item .d { flex: none; color: var(--ink-faint); font-size: 8.2pt;
+        font-family: "SF Mono", "Consolas", monospace; }
+
+    /* --- Projects ---------------------------------------------------- */
+    .proj-list { list-style: none; }
+    .proj-list li {
+        position: relative; padding-left: 12pt; margin-bottom: 4pt;
+        font-size: 9.6pt; color: var(--ink-soft); line-height: 1.4;
+    }
+    .proj-list li::before {
+        content: ""; position: absolute; left: 2pt; top: 4.8pt;
+        width: 3pt; height: 3pt; border-radius: 50%; background: var(--accent);
+    }
+    .proj-list b { color: var(--ink); font-weight: 650; }
+
+    /* --- Education --------------------------------------------------- */
+    .edu { font-size: 9.8pt; color: var(--ink-soft); }
+    .edu b { color: var(--ink); }
+
+    /* --- Floating print button (screen only) ------------------------ */
+    .toolbar {
+        position: fixed; top: 20px; right: 20px; z-index: 50;
+        display: flex; gap: 10px;
+    }
+    .btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        font: 600 14px/1 "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+        padding: 11px 18px; border-radius: 10px; cursor: pointer;
+        border: none; text-decoration: none;
+        background: var(--accent); color: #fff;
+        box-shadow: 0 4px 14px rgba(34, 81, 214, 0.32);
+        transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(34, 81, 214, 0.4); }
+    .btn.secondary {
+        background: #fff; color: var(--ink);
+        border: 1px solid var(--rule); box-shadow: 0 4px 14px rgba(20,24,31,.12);
+    }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* ================================================================
+       PRINT  —  the sheet becomes the page
+       ================================================================ */
+    @page { size: A4; margin: 13mm 14mm; }
+
+    @media print {
+        html, body { background: #fff; }
+        .toolbar { display: none !important; }
+        .sheet {
+            width: auto; min-height: 0; margin: 0; padding: 0;
+            box-shadow: none; font-size: var(--fs-base);
+        }
+        a { color: var(--ink-soft); }
+        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .entry, .earlier-item, .head { break-inside: avoid; }
+        .section-title { break-after: avoid; }
+    }
+
+    /* --- Small screens: let the sheet shrink gracefully ------------- */
+    @media screen and (max-width: 230mm) {
+        .sheet { width: 100%; margin: 0; padding: 22px 20px; box-shadow: none; }
+        .toolbar { position: static; padding: 14px 16px 0; justify-content: flex-end; }
+    }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+    <button class="btn" onclick="window.print()" aria-label="Download or print as PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+    </button>
+    <a class="btn secondary" href="index.html">← Back</a>
+</div>
+
+<div class="sheet">
+
+    <!-- HEADER -->
+    <header class="head">
+        <div class="head-main">
+            <div class="name">Himanshu Verma</div>
+            <div class="title">Senior / Lead Full Stack Developer</div>
+            <div class="contact">
+                <span><i class="dot"></i>Lucknow, India</span>
+                <span><a href="tel:+918750784618">+91 8750784618</a></span>
+                <span><a href="mailto:himan.verma@live.com">himan.verma@live.com</a></span>
+                <span><a href="https://github.com/himanverma" target="_blank" rel="noopener noreferrer">github.com/himanverma</a></span>
+            </div>
+        </div>
+        <div class="head-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://himanverma.github.io/github-resume/" alt="QR code linking to online resume" width="150" height="150">
+            <small>View online</small>
+        </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Accomplished <strong>Senior Full Stack Developer</strong> with <strong>12+ years</strong> of engineering
+            experience specializing in high-scale web and mobile ecosystems. Expert in architecting distributed systems
+            using <strong>Node.js, React/Next.js, and Laravel</strong>. Proven track record of driving technical
+            strategy, leading cross-functional teams, and implementing <strong>Docker-based</strong> local-to-cloud
+            workflows. Deeply focused on system performance, secure payment integrations, and the practical application
+            of <strong>AI/LLM</strong> technologies in production environments.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <dl class="skills">
+            <dt>Backend</dt>
+            <dd>Node.js (Express / AdonisJS), PHP (Laravel), RESTful API Design, Prisma ORM, Socket.io</dd>
+            <dt>Frontend</dt>
+            <dd>React.js, Next.js (App Router / SSR), TailwindCSS, Zustand, Redux, Vite</dd>
+            <dt>Mobile</dt>
+            <dd>React Native, NativeWind, Expo, Cross-platform Deployment</dd>
+            <dt>Databases</dt>
+            <dd>MySQL, MongoDB, Redis (Caching / Queues), PostgreSQL</dd>
+            <dt>Infra &amp; Tools</dt>
+            <dd>AWS (EC2, S3, Lambda), Docker, Auth0, Git, CI/CD Pipelines</dd>
+            <dt>AI / Emerging</dt>
+            <dd>LLM orchestration with Ollama, Agentic AI workflows, FunctionGemma (270M), prompt engineering for automated data extraction</dd>
+        </dl>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div><span class="entry-co">Capital Numbers Infotech Pvt Ltd</span> &nbsp;<span class="entry-role">Senior Software Developer</span></div>
+                <div class="entry-date">Jan 2025 – Present</div>
+            </div>
+            <ul class="bullets">
+                <li>Architecting high-performance frontend architectures using <strong>Next.js (App Router)</strong> and <strong>TailwindCSS</strong>, achieving &lt;2s page load times.</li>
+                <li>Designing scalable client-side state management with <strong>Zustand</strong>, reducing boilerplate by 40% compared to Redux.</li>
+                <li>Leading the integration of <strong>Auth0</strong> for centralized identity management across multiple client products.</li>
+                <li><span class="proj-note">Projects: ottogusto.com, qverde.com — modular UI components and seamless API synchronization.</span></li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div><span class="entry-co">Payix | RePay</span> &nbsp;<span class="entry-role">Senior Software Engineer</span></div>
+                <div class="entry-date">2020 – 2024</div>
+            </div>
+            <ul class="bullets">
+                <li>Developed core fintech modules for high-frequency payment processing using <strong>Node.js</strong> and <strong>React</strong>, ensuring 99.9% uptime.</li>
+                <li>Engineered efficient <strong>MySQL</strong> schemas and implemented <strong>Redis</strong> caching strategies to handle peak transaction loads.</li>
+                <li>Containerized monolithic services into <strong>Docker</strong> microservices, streamlining the development-to-staging lifecycle.</li>
+                <li>Mentored a team of 5+ developers, establishing best practices for code quality, documentation, and unit testing.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div><span class="entry-co">WebieApp Solutions Pvt. Ltd</span> &nbsp;<span class="entry-role">Freelance / Contract Full Stack Developer</span></div>
+                <div class="entry-date">2018 – 2020</div>
+            </div>
+            <ul class="bullets">
+                <li>Delivered full-stack web and cross-platform mobile solutions on a contract basis across multiple client engagements.</li>
+                <li>Key project — <strong>Voltex Electricals</strong>: built the end-to-end web presence and supporting back-office workflows.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div><span class="entry-co">Appster LLP</span> &nbsp;<span class="entry-role">Senior Software Engineer</span></div>
+                <div class="entry-date">2016 – 2018</div>
+            </div>
+            <ul class="bullets">
+                <li>Built and scaled full-stack web applications for global startups using <strong>Laravel</strong> and <strong>Node.js</strong>.</li>
+                <li>Developed feature-rich mobile apps with <strong>React Native</strong>, focusing on high-performance animations and offline-first capabilities.</li>
+                <li>Engineered real-time notification and data streaming services using <strong>Socket.io</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div><span class="entry-co">Zakoopi (RustOrange)</span> &nbsp;<span class="entry-role">Technical Lead &amp; Architect</span></div>
+                <div class="entry-date">2015 – 2016</div>
+            </div>
+            <ul class="bullets">
+                <li>Spearheaded the technical vision and system design for a social discovery engine serving thousands of concurrent users.</li>
+                <li>Directed the migration from a monolith to a <strong>Service-Oriented Architecture (SOA)</strong> to improve horizontal scalability.</li>
+                <li>Managed cloud resource provisioning and deployment on <strong>AWS</strong>, optimizing cost and performance.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div><span class="entry-co">Futureworks Pvt Ltd</span> &nbsp;<span class="entry-role">Senior Team Leader</span></div>
+                <div class="entry-date">2014 – 2015</div>
+            </div>
+            <ul class="bullets">
+                <li>Led the engineering lifecycle for enterprise-grade web solutions, ensuring on-time delivery and adherence to architectural standards.</li>
+            </ul>
+        </div>
+
+        <div class="earlier">
+            <div class="earlier-item"><span><b>Cardinal Technology Solutions</b> — UI/UX Developer</span><span class="d">2013 – 2014</span></div>
+            <div class="earlier-item"><span><b>Maaraj Strategic Development</b> — Team Leader / Web Developer</span><span class="d">2012 – 2013</span></div>
+            <div class="earlier-item"><span><b>Macro Info Solutions</b> — Web Developer</span><span class="d">2011 – 2012</span></div>
+        </div>
+    </section>
+
+    <!-- KEY PROJECTS -->
+    <section class="section">
+        <h2 class="section-title">Key Projects</h2>
+        <ul class="proj-list">
+            <li><b>Enterprise Fintech Engine</b> — Built multi-tenant payment gateways with a focus on data integrity and security-audit compliance.</li>
+            <li><b>Real-time Event Systems</b> — Architected a live event notification engine using <strong>Node.js</strong> and <strong>Redis Pub/Sub</strong> to handle thousands of concurrent webhooks.</li>
+            <li><b>Dynamic E-commerce Architectures</b> — Leveraged <strong>Next.js SSR</strong> and <strong>Prisma</strong> to build highly indexable, SEO-optimized marketplaces with complex product relationships.</li>
+        </ul>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <p class="edu"><b>Bachelor of Computer Applications (BCA)</b></p>
+    </section>
+
+</div>
+
+<script>
+    // Auto-open the print dialog when opened as the "Download PDF" target.
+    (function () {
+        var params = new URLSearchParams(location.search);
+        if (params.get('print') === '1') {
+            window.addEventListener('load', function () {
+                setTimeout(function () { window.print(); }, 350);
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>

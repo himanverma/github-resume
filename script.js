@@ -294,11 +294,11 @@ document.addEventListener('DOMContentLoaded', function() {
         chatSettings.classList.remove('open');
     });
 
-    // PDF Download Button
+    // PDF Download Button — opens the dedicated A4 resume and triggers print
     const downloadPdfBtn = document.getElementById('downloadPdfBtn');
     if (downloadPdfBtn) {
         downloadPdfBtn.addEventListener('click', () => {
-            window.print();
+            window.open('resume.html?print=1', '_blank', 'noopener');
         });
     }
 

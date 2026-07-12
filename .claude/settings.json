@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf=/tmp/claude-1000/-data-REACT-NATIVE-github-resume/0e98f881-5c25-4721-a180-d61f94b3f4a9/scratchpad/resume.pdf file://__TRACKED_VAR__/resume.html)",
+      "Bash(rm -f /tmp/claude-1000/-data-REACT-NATIVE-github-resume/0e98f881-5c25-4721-a180-d61f94b3f4a9/scratchpad/page*.png /tmp/claude-1000/-data-REACT-NATIVE-github-resume/0e98f881-5c25-4721-a180-d61f94b3f4a9/scratchpad/resume.pdf)",
+      "Bash(pdfinfo /tmp/claude-1000/-data-REACT-NATIVE-github-resume/0e98f881-5c25-4721-a180-d61f94b3f4a9/scratchpad/resume.pdf)"
+    ]
+  }
+}
