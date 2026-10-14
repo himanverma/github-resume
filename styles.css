@@ -849,6 +849,28 @@ section {
     border-color: var(--accent-primary);
 }
 
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+
+.project-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    vertical-align: middle;
+    color: var(--accent-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
 /* Education */
 .education-card {
     display: flex;
@@ -1645,7 +1667,7 @@ section {
     .pulse-dot, .typewriter, .code-window, .section-tag,
     .timeline-line, .timeline-dot, .project-icon,
     .education-icon, .contact-icon, .contact-item .contact-icon,
-    .skill-icon, .footer, .project-link, .btn svg,
+    .skill-icon, .footer, .project-link, .project-links, .btn svg,
     .hero-cta .btn-primary, .hero-cta .btn-secondary:first-of-type,
     #downloadPdfBtn, .faq {
         display: none !important;
@@ -1926,6 +1948,15 @@ section {
         color: #333 !important;
         border: 0.5pt solid #ddd !important;
         font-family: var(--font-mono);
+    }
+
+    .project-badge {
+        font-size: 5.5pt !important;
+        padding: 0.5pt 3pt !important;
+        margin-left: 4pt !important;
+        background: none !important;
+        color: #333 !important;
+        border: 0.5pt solid #bbb !important;
     }
 
     /* Education */

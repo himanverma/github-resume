@@ -64,6 +64,10 @@ Accomplished **Senior Full Stack Developer** with **12+ years** of engineering e
 *   **Real-time Event Systems:** Architected a live event notification engine using **Node.js** and **Redis Pub/Sub** to handle thousands of concurrent webhooks.
 *   **Dynamic E-commerce Architectures:** Leveraged **Next.js SSR** and **Prisma** to build highly indexable, SEO-optimized marketplaces with complex product relationships.
 
+### **PERSONAL / HOBBY PROJECTS**
+
+*   **Alive TABs:** Open-source editor extension (**TypeScript**, VS Code Extension API) that colors editor tabs and marks files or AI agent sessions with colored flags. Published on the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=WebieAPP.alivetabs) and [Open VSX](https://open-vsx.org/extension/himanverma/alivetabs) for VS Code, Cursor, Windsurf, VSCodium, and Devin Desktop. Source: [github.com/himanverma/alive-tabs](https://github.com/himanverma/alive-tabs).
+
 ---
 
 ### **EDUCATION**

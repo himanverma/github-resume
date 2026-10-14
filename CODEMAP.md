@@ -26,7 +26,7 @@ github-resume/
 2. `<header class="hero" id="about">` — Name, title, summary, stats, CTAs (email, GitHub, PDF), code window
 3. `<section class="skills" id="skills">` — 6 skill-group cards (3-col grid)
 4. `<section class="experience" id="experience">` — Timeline with 5 items + earlier roles
-5. `<section class="projects" id="projects">` — 6 project cards (3-col grid)
+5. `<section class="projects" id="projects">` — 7 project cards (3-col grid); Alive TABs card carries a `.project-badge` "Hobby Project" pill and a `.project-links` row of external links (VS Marketplace, Open VSX, GitHub)
 6. `<section class="education" id="education">` — Single education card
 7. `<section class="contact" id="contact">` — 4 contact items (email, phone, location, GitHub)
 8. `<section class="online-resume" id="online-resume">` — QR code + "View online" link
