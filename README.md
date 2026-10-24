@@ -36,7 +36,7 @@ Visit: `https://himanverma.github.io/github-resume`
 - **BoloBill Voice Commerce** – AI voice-first ordering for Indian kiranas with WhatsApp ordering, UPI billing, and inventory automation.
 - **Safe Ride Track** – Real-time fleet telemetry dashboards with live GPS, geofencing alerts, and driver scorecards.
 - **AptitudeClasses 360°** – Competitive exam prep stack hosting 30 years of solved papers, tens of thousands of MCQs, and live quiz infrastructure.
-- **Alive TABs** *(personal hobby project)* – Open-source editor extension that colors tabs and marks files or AI agent sessions with colored flags. Available on the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=WebieAPP.alivetabs), [Open VSX](https://open-vsx.org/extension/himanverma/alivetabs), and [GitHub](https://github.com/himanverma/alive-tabs) for VS Code, Cursor, Windsurf, VSCodium, and Devin Desktop.
+- **Alive TABs** *(personal hobby project)* – Open-source editor extension that colors tabs and marks files or AI agent sessions with colored flags. Available on [Open VSX](https://open-vsx.org/extension/WebieAPP/alivetabs) and [GitHub](https://github.com/himanverma/alive-tabs) for VS Code, Cursor, Windsurf, VSCodium, and Devin Desktop.
 
 ## 🛠️ Tech Stack
 

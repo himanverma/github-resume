@@ -66,7 +66,7 @@ Accomplished **Senior Full Stack Developer** with **12+ years** of engineering e
 
 ### **PERSONAL / HOBBY PROJECTS**
 
-*   **Alive TABs:** Open-source editor extension (**TypeScript**, VS Code Extension API) that colors editor tabs and marks files or AI agent sessions with colored flags. Published on the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=WebieAPP.alivetabs) and [Open VSX](https://open-vsx.org/extension/himanverma/alivetabs) for VS Code, Cursor, Windsurf, VSCodium, and Devin Desktop. Source: [github.com/himanverma/alive-tabs](https://github.com/himanverma/alive-tabs).
+*   **Alive TABs:** Open-source editor extension (**TypeScript**, VS Code Extension API) that colors editor tabs and marks files or AI agent sessions with colored flags. Published on [Open VSX](https://open-vsx.org/extension/WebieAPP/alivetabs) for VS Code, Cursor, Windsurf, VSCodium, and Devin Desktop. Source: [github.com/himanverma/alive-tabs](https://github.com/himanverma/alive-tabs).
 
 ---
 
